@@ -1,7 +1,5 @@
 #!/usr/bin/python
 import time
-import hashlib
-import base64
 import smtplib
 import httplib, urllib
 import boto.route53
