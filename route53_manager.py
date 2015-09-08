@@ -54,12 +54,12 @@ def logger(level, message):
     timestamp = time.strftime("%Y-%m-%dT%H:%M:%S")
     print "[" + timestamp + "] " + level.upper() + ": " + message
     
-def emailNotification(gmailUser, gmailPass, recipients, serverRecordSet, zoneName, zoneId, operation, instanceIPv4):
+def emailNotification(notificationUser, notificationPass, recipients, serverRecordSet, zoneName, zoneId, operation, instanceIPv4):
     
     session = smtplib.SMTP('smtp.gmail.com', 587)
     session.ehlo()
     session.starttls()
-    session.login(gmailUser, gmailPass)
+    session.login(notificationUser, notificationPass)
     
     headers = "\r\n".join(["from: " + "noreply@example.com",
                        "subject: Route53 server hostname " + operation,
